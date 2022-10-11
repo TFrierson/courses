@@ -69,7 +69,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721Full.sol";
 import "@openzeppelin/contracts/drafts/Counters.sol";
 ```
 
-Here we're defining the version of solidity we're using. Then we're importing in OpenZeppelin's implementation of the ERC-721 standard, which comes with some hand functions like checking who the owner of an NFT is and minting the NFTs.
+Here we're defining the version of solidity we're using. Then we're importing in OpenZeppelin's implementation of the ERC-721 standard, which comes with some handy functions like checking who the owner of an NFT is and minting the NFTs.
 
 ```solidity
 contract GameItem is ERC721Full {
@@ -90,7 +90,7 @@ contract GameItem is ERC721Full {
 }
 ```
 
-On **line 1**, we name our contract GameItem and inherit the ERC721 library from OpenZepplin. On **line 2** we're inheriting all the methods from the [Counter library](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol) and **line 3** we're inheriting Counter, which is of type of struct and has a default value of 0 that is of type int. This can seem confusing, but to clear things up take a look at this [line](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol#L15) from the Counters contract. We're then storing 0 in a private variable called "_tokenIds", as you can tell from the underscore at the start of this variable, and using it as a function parameter.
+On **line 1**, we name our contract GameItem and inherit the ERC721 library from OpenZepplin. On **line 2** we're inheriting all the methods from the [Counter library](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol) and **line 3** we're inheriting Counter, which is of type struct and has a default value of 0 that is of type int. This can seem confusing, but to clear things up take a look at this [line](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/Counters.sol#L15) from the Counters contract. We're then storing 0 in a private variable called "_tokenIds", as you can tell from the underscore at the start of this variable, and using it as a function parameter.
 
 On **line 5**, we're giving our token the name "GameItem" with the symbol "ITM".  On **line 7** we're using the **awardItem**() function, which takes in the wallet address of the player, and a tokenURI. Think of tokenURI as a unique identifier for our NFT metadata, that we can reference to check and include things like a link to our JPEG file, which typically would be a JSON file. On **line 8** our tokenIds are incremented and **online 10** assigned to the variable **newItemID**.
 
